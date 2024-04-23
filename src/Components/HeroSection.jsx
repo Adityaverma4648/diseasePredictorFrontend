@@ -11,7 +11,7 @@ const HeroSection = () => {
   const [precautions, setPrecautions] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:7000/data").then((res) => {
+    axios.get("https://diseasepredictorbackend-7a3t.onrender.com/data").then((res) => {
       const array = [];
 
       setData(res.data.result);
@@ -35,7 +35,7 @@ const HeroSection = () => {
   const predictDisease = (e) => {
     console.log("Symptoms : ", symptoms);
     axios
-      .get("http://localhost:7000/predict", {
+      .get("https://diseasepredictorbackend-7a3t.onrender.com/predict", {
         headers: {
           "Content-Type": "application/json",
         },
